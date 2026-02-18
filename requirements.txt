@@ -1,0 +1,49 @@
+# Core dependencies
+# openai>=1.0.0  # Disabled - using Ollama only
+# anthropic>=0.3.0  # Disabled - using Ollama only
+transformers>=4.30.0
+torch>=2.0.0
+numpy>=1.24.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+langchain>=0.0.300
+langchain-community>=0.0.10
+
+# Memory and storage
+chromadb>=0.4.0
+redis>=4.0.0
+faiss-cpu>=1.7.4
+
+# Web and API
+fastapi>=0.100.0
+uvicorn>=0.23.0
+requests>=2.31.0
+
+# Tools and agents
+duckduckgo-search>=4.1.1
+selenium>=4.10.0
+beautifulsoup4>=4.12.0
+python-dotenv>=1.0.0
+pypdf2>=3.0.0
+youtube-transcript-api>=0.6.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+
+# Utilities
+pyyaml>=6.0
+tqdm>=4.65.0
+asyncio
+loguru>=0.7.0
+
+# System monitoring
+psutil>=5.9.0
+
+# Visualization
+tensorboard>=2.15.0
+streamlit>=1.28.0
+plotly>=5.15.0
+# Additional tools
+pillow>=9.0.0  # For image processing in data visualization

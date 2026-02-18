@@ -1,0 +1,32 @@
+{
+  "core_components": {
+    "config": "success",
+    "logger": "success",
+    "reasoning_core": "success",
+    "decision_engine": "success"
+  },
+  "tools": {
+    "successful": 4,
+    "total": 4
+  },
+  "memory": {
+    "status": "partial"
+  },
+  "learning": {
+    "status": "success",
+    "metrics": {
+      "experience_count": 1,
+      "performance_history_length": 1,
+      "strategy_diversity": 1,
+      "error_pattern_count": 0,
+      "q_table_size": 1,
+      "recent_performance": 0.0
+    }
+  },
+  "overall_status": "EXCELLENT",
+  "interfaces": {
+    "api": "success",
+    "cli": "success"
+  },
+  "overall_score": 83.33333333333334
+}
