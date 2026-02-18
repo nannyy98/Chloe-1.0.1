@@ -1,0 +1,117 @@
+{
+  "project_name": "Chloe AI - Adaptive Cognitive System",
+  "version": "1.0.1",
+  "description": "Modular cognitive architecture for universal AI assistant",
+  "workspace": "./workspace",
+  "data_path": "./data",
+  "logs_path": "./logs",
+  
+  "architecture": {
+    "core_components": [
+      "Reasoning Core",
+      "Decision Engine", 
+      "Tool Execution Layer",
+      "Memory System",
+      "Learning Engine"
+    ],
+    "memory_types": {
+      "short_term": "dialog context",
+      "long_term": "knowledge base",
+      "experience": "learning history"
+    }
+  },
+  
+  "api_keys": {
+    "openai": "",
+    "anthropic": "",
+    "groq": "",
+    "openrouter": ""
+  },
+  
+  "models": {
+    "reasoning": "ollama",
+    "embedding": "ollama_embeddings",
+    "classification": "light_ml_model"
+  },
+  
+  "api": {
+    "port": 8000,
+    "host": "0.0.0.0"
+  },
+  
+  "memory": {
+    "short_term_limit": 100,
+    "cleanup_frequency": 10,
+    "embedding_dimensions": 1536,
+    "similarity_threshold": 0.7
+  },
+  
+  "learning": {
+    "learning_rate": 0.1,
+    "success_threshold": 0.7,
+    "experience_buffer_size": 100,
+    "evaluation_window": 50,
+    "adaptation_threshold": 0.1
+  },
+  
+  "decision_engine": {
+    "complexity_threshold": 0.7,
+    "tool_availability_bonus": 0.2,
+    "learning_opportunity_bonus": 0.15,
+    "confidence_threshold": 0.6
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "./logs/chloe_ai.log"
+  },
+  
+  "llm_providers": {
+    "primary": "ollama",
+    "fallback_order": ["ollama", "openrouter"],
+    "providers": {
+      "ollama": {
+        "url": "http://localhost:11434/api/generate",
+        "model": "phi",
+        "timeout": 60,
+        "enabled": true,
+        "primary_provider": true
+      },
+      "openrouter": {
+        "api_key": "",
+        "model": "meta-llama/llama-3.1-70b-instruct",
+        "timeout": 30,
+        "enabled": false
+      },
+      "groq": {
+        "api_key": "",
+        "model": "llama3-70b-8192",
+        "timeout": 15,
+        "enabled": false
+      }
+    }
+  },
+  
+  "tools": {
+    "available": [
+      "code_runner",
+      "web_agent", 
+      "file_agent",
+      "data_analysis_agent"
+    ],
+    "planned": [
+      "browse_page",
+      "math_solver", 
+      "x_search",
+      "youtube_transcript"
+    ],
+    "dynamic_descriptions": true
+  },
+  
+  "performance": {
+    "response_time_target": 5.0,
+    "context_window_max": 30,
+    "compression_threshold": 10
+  }
+}

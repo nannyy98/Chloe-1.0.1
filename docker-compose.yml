@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  chloe-ai:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Cloud providers disabled - using Ollama only
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - LLM_MODEL=qwen2.5:7b
+      - EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+      - MEMORY_PATH=./memory/chroma
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./config:/app/config
+      - ./workspace:/app/workspace
+    depends_on:
+      - redis
+      - chroma
+    networks:
+      - chloe-network
+  
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - chloe-network
+  
+  chroma:
+    image: chromadb/chroma:latest
+    ports:
+      - "8001:8000"
+    volumes:
+      - chroma_data:/chroma/chroma/
+    networks:
+      - chloe-network
+
+volumes:
+  redis_data:
+  chroma_data:
+
+networks:
+  chloe-network:
+    driver: bridge
